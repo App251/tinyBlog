@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+{% block content %}
+    <h2>{{ post.title }}</h2>
+    <p>{{ post.body }}</p>
+    <p>
+      {{ post.created_at.strftime('%H:%M %Y-%m-%d') }} |
+      {% with total=post.comments|length %}
+          {{ total }} comment {%- if total > 1 %}s{%- endif -%}
+      {% endwith %}
+    </p>
+{% endblock %}
