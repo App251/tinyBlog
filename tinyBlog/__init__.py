@@ -8,7 +8,9 @@ db = MongoEngine(app)
 
 def register_blueprints(app):
     from tinyBlog.views import posts
+    from tinyBlog.admin import admin
     app.register_blueprint(posts)
+    app.register_blueprint(admin)
 
 register_blueprints(app)
 
